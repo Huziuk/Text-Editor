@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- ? Головний блок -->
+        <div class="text-block">
+            <p>Lorem ipsum dolor sit amet.</p>
+            <p>Lorem ipsum dolor sit amet.</p>
+            <p>Lorem ipsum dolor sit amet.</p>
+            <p>Lorem ipsum dolor sit amet.</p>
+            <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+        <!-- ? Форма з кнопками Edit та Style -->
+        <form name="formBtn">
+            <div class="buttons-block">
+                <input type="button" class="edit-btn btn" name="edit" value="Edit">
+                <input type="button" class="style-btn btn" name="style" value="Style">
+            </div>
+        </form>
+        <!-- ? Блок Edit -->
+        <div class="edit-block">
+            <form name="editForm" class="edit-form">
+                <textarea name="editTextarea" class="edit-textarea" cols="30" rows="10"></textarea>
+                <div class="buttons-block buttons-block-edit">
+                    <input type="button" name="addBtn" class="add-btn btn" value="Add">
+                    <input type="button" name="saveBtn" class="save-btn btn" value="Save">
+                </div>
+            </form>
+        </div>
+        <!-- ? Блок Style -->
+        <div class="style-block">
+            <span class="title-style">Font Size</span>
+            <!-- ? Radio Form -->
+            <form name="radioForm">
+                <label class="pixel-label"><input type="radio" name="pixel" value="12px"> 12px</label>
+                <label class="pixel-label"><input type="radio" name="pixel" value="14px"> 14px</label>
+                <label class="pixel-label"><input type="radio" name="pixel" value="16px" checked> 16px</label>
+                <label class="pixel-label"><input type="radio" name="pixel" value="18px"> 18px</label>
+                <label class="pixel-label"><input type="radio" name="pixel" value="20px"> 20px</label>
+                <label class="pixel-label"><input type="radio" name="pixel" value="22px"> 22px</label>
+            </form>
+            <span class="title-style">Font Family</span>
+            <!-- ? Font Family Form -->
+            <form name="fontFamilyForm">
+                <select name="fontFamiliSelect" class="font-famili-select">
+                    <option selected>Lato</option>
+                    <option>Monospace</option>
+                    <option>Arial</option>
+                    <option>Impact</option>
+                </select>
+            </form>
+            <span class="title-style">Colors</span>
+            <!-- ? Colors Form -->
+            <form name="colorsForm">
+                <input type="button" class="colors-btn" value="Text">
+                <input type="button" class="colors-btn" value="Background">
+            </form>
+            <!-- ? Colors Palette -->
+            <div class="palette-font">
+                <div class="color red"></div>
+                <div class="color blue"></div>
+                <div class="color green"></div>
+                <div class="color black"></div>
+                <div class="color yellow"></div>
+                <div class="color pink"></div>
+                <div class="color white"></div>
+                <div class="color violet"></div>
+                <div class="color lightblue"></div>
+            </div>
+            <div class="palette-back">
+                <div class="color-back red"></div>
+                <div class="color-back blue"></div>
+                <div class="color-back green"></div>
+                <div class="color-back black"></div>
+                <div class="color-back yellow"></div>
+                <div class="color-back pink"></div>
+                <div class="color-back white"></div>
+                <div class="color-back violet"></div>
+                <div class="color-back lightblue"></div>
+            </div>
+            <span class="title-style">Font Style</span>
+            <!-- ? Style Text Form -->
+            <form name="styleTextForm">
+                <label class="checkbox-style"><input type="checkbox" name="bold"> Bold text</label>
+                <label class="checkbox-style"><input type="checkbox" name="italic"> Cursive text</label>
+            </form>
+        </div>
+        <!-- ? Add Element Block-->
+        <div class="back_modal">
+            <div class="add-element-block">
+                <span class="add-element-title">Choose what you want</span>
+                <form name="chooseAddElem">
+                    <label class="choose-list"><input type="radio" value="table" name="choose" checked> Table</label>
+                    <label class="choose-list"><input type="radio" value="list" name="choose"> List</label>
+                </form>
+                <!-- ? Add Table Form -->
+                <form name="addTable" class="add-table">
+                    <div>
+                        <span class="property-desc">Count TR </span><input type="text" placeholder="Count TR:" class="value-table" name="countTR" required>
+                    </div>
+                    <div>
+                        <span class="property-desc">Count TD </span><input type="text" placeholder="Count TD:" class="value-table" name="countTD" required>
+                    </div>
+                    <span class="table-style-title">Add style your table</span>
+                    <div>
+                        <span class="property-desc">Width of TD </span><input type="text" placeholder="Width of TD:" class="value-table" name="widthTD" required>
+                    </div>
+                    <div>
+                        <span class="property-desc">Height of TD </span><input type="text" placeholder="Height of TD:" class="value-table" name="heightTD" required>
+                    </div>
+                    <div class="border-style-block">
+                        <span class="property-desc">Width of border </span><input type="text" placeholder="Width:" class="value-table border-style" name="borderWidth" required>
+                        <span class="property-desc">Type of border </span>
+                        <select name="borderType" class="value-table border-style" required>
+                            <option value="solid" selected>solid</option>
+                            <option value="dotted">dotted</option>
+                            <option value="dashed">dashed</option>
+                        </select>
+                        <span class="property-desc">Height of TD </span>
+                        <select name="borderColor" class="value-table border-style" required>
+                            <option value="black">black</option>
+                            <option value="red">red</option>
+                            <option value="blue">blue</option>
+                            <option value="green">green</option>
+                        </select>
+                    </div>
+                    <input type="submit" value="Create table" class="create-table-btn btn">
+                </form>
+                <!-- ? Add List Form -->
+                <form name="createList" class="create-list">
+                    <div><span class="property-desc">Count Li </span><input type="text" placeholder="Count Li:" name="countLi" class="value-table"></div>
+                    <div>
+                        <span class="property-desc">Type of marks </span>
+                        <select name="marksType" class="marks-type value-table">
+                            <option value="disc">disc</option>
+                            <option value="circle">circle</option>
+                            <option value="square">square</option>
+                        </select>
+                    </div>
+                    <input type="submit" value="Create Li" name="createTable" class="create-table-btn btn">
+                </form>
+            </div>
+        </div>
+    </div>
+    
+
+    
+
+    <script src="./main.js"></script>
+</body>
+</html>
